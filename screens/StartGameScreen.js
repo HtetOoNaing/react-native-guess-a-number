@@ -5,7 +5,7 @@ import colors from '../constants/colors'
 import { Alert, Button, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import NumberContainer from '../components/NumberContainer'
 
-const StartGameScreen = () => {
+const StartGameScreen = ({ onStartGame }) => {
 	const [enteredValue, setEnteredValue] = useState('')
 	const [selectedNumber, setSelectedNumber] = useState()
 	const [confirmed, setConfirmed] = useState(false)
@@ -37,7 +37,7 @@ const StartGameScreen = () => {
 			<Card style={styles.summaryContainer}>
 				<Text>You selected</Text>
 				<NumberContainer>{selectedNumber}</NumberContainer>
-				<Button title='START GAME' />
+				<Button title='START GAME' onPress={() => onStartGame(selectedNumber)} />
 			</Card>
 		)
 	}
