@@ -4,6 +4,8 @@ import Input from '../components/Input'
 import colors from '../constants/colors'
 import { Alert, Button, Keyboard, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import NumberContainer from '../components/NumberContainer'
+import BodyText from '../components/BodyText'
+import TitleText from '../components/TitleText'
 
 const StartGameScreen = ({ onStartGame }) => {
 	const [enteredValue, setEnteredValue] = useState('')
@@ -35,7 +37,7 @@ const StartGameScreen = ({ onStartGame }) => {
 	if (confirmed) {
 		confirmedOutput = (
 			<Card style={styles.summaryContainer}>
-				<Text>You selected</Text>
+				<BodyText>You selected</BodyText>
 				<NumberContainer>{selectedNumber}</NumberContainer>
 				<Button title='START GAME' onPress={() => onStartGame(selectedNumber)} />
 			</Card>
@@ -45,9 +47,9 @@ const StartGameScreen = ({ onStartGame }) => {
 	return (
 		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<View style={styles.screen}>
-				<Text style={styles.title}>Start a New Game</Text>
+				<TitleText style={styles.title}>Start a New Game</TitleText>
 				<Card style={styles.inputContainer}>
-					<Text>Select a Number</Text>
+					<BodyText>Select a Number</BodyText>
 					<Input style={styles.input} blurOnSubmit autoCapitalize="none" autoCorrect={false} keyboardType="number-pad" maxLength={2} value={enteredValue} onChangeText={numberInputHandler} />
 					<View style={styles.buttonContainer}>
 						<View style={styles.button}><Button title='Reset' onPress={resetInputHandler} color={colors.accent} /></View>
