@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 import TitleText from "../components/TitleText";
 import colors from "../constants/colors";
 
@@ -23,7 +24,7 @@ const GameOverScreen = ({ roundNumber, userNumber, onNewGame }) => {
 					<Text style={styles.highlight}>{userNumber}</Text>{" "}
 				</BodyText>
 			</View>
-			<Button title="NEW GAME" onPress={onNewGame} />
+			<MainButton onPress={onNewGame}>NEW GAME</MainButton>
 		</View>
 	);
 };
@@ -49,6 +50,6 @@ const styles = StyleSheet.create({
 	},
 	highlight: {
 		color: colors.primary,
-		fontWeight: "bold"
+		fontFamily: "DancingScript-Bold"
 	},
 });
