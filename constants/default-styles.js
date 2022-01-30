@@ -7,5 +7,6 @@ export default StyleSheet.create({
 	},
 	title: {
 		fontFamily: 'DancingScript-Regular',
+		fontSize: 25
 	}
 })
