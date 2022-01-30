@@ -1,13 +1,15 @@
 import React from 'react'
 import { Button, Image, StyleSheet, Text, View } from 'react-native'
+import BodyText from '../components/BodyText'
+import TitleText from '../components/TitleText'
 
 const GameOverScreen = ({ roundNumber, userNumber, onNewGame  }) => {
 	return (
 		<View style={styles.screen}>
-			<Text>The game is over!</Text>
+			<TitleText>The game is over!</TitleText>
 			<Image source={require('../assets/brazil.png')} style={styles.image} resizeMode="contain" />
-			<Text>Number of rounds {roundNumber}</Text>
-			<Text>Number was {userNumber}</Text>
+			<BodyText style={styles.text}>Number of rounds {roundNumber}</BodyText>
+			<BodyText style={styles.text}>Number was {userNumber}</BodyText>
 			<Button title='NEW GAME' onPress={onNewGame} /> 
 		</View>
 	)
@@ -24,5 +26,9 @@ const styles = StyleSheet.create({
 	image: {
 		width: '80%',
 		height: 300,
+	},
+	text: {
+		fontSize: 20,
+		marginBottom: 10
 	}
 })
